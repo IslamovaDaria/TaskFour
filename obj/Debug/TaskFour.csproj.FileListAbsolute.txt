@@ -1,0 +1,7 @@
+C:\Users\Daria\source\repos\TaskFour\TaskFour\bin\Debug\TaskFour.exe.config
+C:\Users\Daria\source\repos\TaskFour\TaskFour\bin\Debug\TaskFour.exe
+C:\Users\Daria\source\repos\TaskFour\TaskFour\bin\Debug\TaskFour.pdb
+C:\Users\Daria\source\repos\TaskFour\TaskFour\obj\Debug\TaskFour.csprojResolveAssemblyReference.cache
+C:\Users\Daria\source\repos\TaskFour\TaskFour\obj\Debug\TaskFour.csproj.CoreCompileInputs.cache
+C:\Users\Daria\source\repos\TaskFour\TaskFour\obj\Debug\TaskFour.exe
+C:\Users\Daria\source\repos\TaskFour\TaskFour\obj\Debug\TaskFour.pdb
