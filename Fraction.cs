@@ -44,7 +44,9 @@ namespace TaskFour
 
         public override string ToString()
         {
-            return numerator + "/" + denominator;
+            if (denominator == 1)
+                return Convert.ToString(numerator);
+            else return numerator + "/" + denominator;
         }
 
         public static Fraction operator +(Fraction X, Fraction Y)
@@ -57,6 +59,35 @@ namespace TaskFour
         {
             Fraction res = new Fraction(X.numerator * Y.numerator, X.denominator * Y.denominator);
             return res;
+        }
+
+        public static Fraction Reduction(Fraction X)
+        {
+            int nod = NOD(X.numerator, X.denominator);
+            if (nod != 0)
+            {
+                X.numerator /= nod;
+                X.denominator /= nod;
+            }
+            return X;
+        }
+        public static int NOD(int n, int d)
+        {
+            int temp;
+            n = Math.Abs(n);
+            d = Math.Abs(d);
+            while (n != 0 && d != 0)
+            {
+                if (n % d > 0)
+                {
+                    temp = n;
+                    n = d;
+                    d = temp % d;
+                }
+                else break;
+            }
+            if (d != 0 && n != 0) return d;
+            else return 0;
         }
 
     }
