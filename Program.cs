@@ -23,14 +23,28 @@ namespace TaskFour
             sr.Close();
             fs.Close();
 
-            Fraction x1 = new Fraction(arr[0], arr[1]);
-            Fraction x2 = new Fraction(arr[2], arr[3]);
-            Fraction x3 = new Fraction(arr[4], arr[5]);
-            Fraction x4 = new Fraction(arr[6], arr[7]);
-            Fraction x5 = new Fraction(arr[8], arr[9]);
-            Fraction x6 = new Fraction(arr[10], arr[11]);
-            Fraction x7 = new Fraction(arr[12], arr[13]);
-            Fraction c = new Fraction(arr[14], arr[15]);
+            Fraction[] polynom = new Fraction[7];
+            polynom[0] = new Fraction(arr[0], arr[1]);
+            polynom[1] = new Fraction(arr[2], arr[3]);
+            polynom[2] = new Fraction(arr[4], arr[5]);
+            polynom[3] = new Fraction(arr[6], arr[7]);
+            polynom[4] = new Fraction(arr[8], arr[9]);
+            polynom[5] = new Fraction(arr[10], arr[11]);
+            polynom[6] = new Fraction(arr[12], arr[13]);
+            Fraction x = new Fraction(arr[14], arr[15]);
+
+            Fraction result = Gorner(x, polynom);
+            Console.WriteLine(result);
+            result = Fraction.Reduction(result);
+            Console.WriteLine(result);
+            Console.ReadLine();
+        }
+
+        static Fraction Gorner(Fraction x, Fraction[] polynom, int i = 0)
+        {            
+            if (polynom.Length <= i)
+                return new Fraction(0, 1);
+            return polynom[i] + x * Gorner(x, polynom, i + 1);
         }
     }
 }
