@@ -34,7 +34,6 @@ namespace TaskFour
             Fraction x = new Fraction(arr[14], arr[15]);
 
             Fraction result = Gorner(x, polynom);
-            Console.WriteLine(result);
             result = Fraction.Reduction(result);
             Console.WriteLine(result);
             Console.ReadLine();
