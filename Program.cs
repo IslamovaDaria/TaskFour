@@ -33,17 +33,12 @@ namespace TaskFour
             polynom[6] = new Fraction(arr[12], arr[13]);
             Fraction x = new Fraction(arr[14], arr[15]);
 
-            Fraction result = Gorner(x, polynom);
+            Fraction result = Fraction.Gorner(x, polynom);
             result = Fraction.Reduction(result);
             Console.WriteLine(result);
             Console.ReadLine();
         }
 
-        static Fraction Gorner(Fraction x, Fraction[] polynom, int i = 0)
-        {            
-            if (polynom.Length <= i)
-                return new Fraction(0, 1);
-            return polynom[i] + x * Gorner(x, polynom, i + 1);
-        }
+        
     }
 }
