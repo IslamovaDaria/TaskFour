@@ -32,15 +32,6 @@ namespace TaskFour
             this.numerator = n;
             this.denominator = d;
         }
-        public void Show() //метод для вывода   
-        {
-            if (denominator != 0)
-            {
-                if (this.denominator > 0) Console.WriteLine("{0} + i{1}", numerator, denominator);
-                else Console.WriteLine("{0} - i{1}", numerator, Math.Abs(denominator));
-            }
-            else Console.WriteLine("{0}", numerator);
-        }
 
         public override string ToString()
         {
