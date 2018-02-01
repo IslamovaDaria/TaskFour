@@ -13,15 +13,24 @@ namespace TaskFour
         {
             int size = 16;
             int[] arr = new int[size];
-            FileStream fs = new FileStream("input.txt", FileMode.Open);
-            StreamReader sr = new StreamReader(fs);
-            string buf = sr.ReadLine();
-            string[] mas = new string[size];
-            mas = buf.Split(' ');
-            for (int i = 0; i < mas.Length; i++)
-                arr[i] = Convert.ToInt32(mas[i]);
-            sr.Close();
-            fs.Close();
+            try
+            {
+                FileStream fs = new FileStream("input.txt", FileMode.Open);
+                StreamReader sr = new StreamReader(fs);
+                string buf = sr.ReadLine();
+                string[] mas = new string[size];
+                mas = buf.Split(' ');
+                for (int i = 0; i < mas.Length; i++)
+                sr.Close();
+                fs.Close();
+            }
+
+            catch
+            {
+                Console.WriteLine("Файл input.txt не существует или его содержимое не удовлетворяет требованиям программы!");
+                Console.ReadLine();
+                return;
+            }
 
             Fraction[] polynom = new Fraction[7];
             polynom[0] = new Fraction(arr[0], arr[1]);
@@ -37,8 +46,6 @@ namespace TaskFour
             result = Fraction.Reduction(result);
             Console.WriteLine(result);
             Console.ReadLine();
-        }
-
-        
+        }       
     }
 }
